@@ -2286,6 +2286,7 @@ h3.related_title {
 
 .social_link:before {
 	content: '';
+	height: 7px;
 	position: absolute;
 	z-index: 0;
 	top: -5px;
