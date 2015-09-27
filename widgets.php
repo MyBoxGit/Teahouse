@@ -751,3 +751,84 @@ if ( ! function_exists( 'cs_widget_init_Alipay' ) ) {
   }
   add_action( 'widgets_init', 'cs_widget_init_Alipay', 2 );
 }
+
+/**
+ *
+ * 切换皮肤
+ *
+ */
+if( ! class_exists( 'CS_Widget_skin' ) ) {
+  class CS_Widget_skin extends WP_Widget {
+	//构建函数
+    function __construct() {
+
+      $widget_ops     = array(
+        'classname'   => 'CS_Widget_skin',
+        'description' => '切换皮肤'
+      );
+
+      parent::__construct( 'CS_Widget_skin', 'Lazycat切换皮肤', $widget_ops );
+
+    }
+	//前台显示函数
+
+    function widget( $args, $instance ) {
+
+      extract( $args );
+
+      echo $before_widget;
+
+	  if ( ! empty( $instance['title'] ) ) {
+		 echo $before_title . $instance['title'] . $after_title;
+	  }
+
+      echo '<div class="textwidget" id="comment-list"><ul>';
+      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Dark" href="http://www.zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin01.css"></a></li>';
+      echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Light" href="http://www.zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin02.css"></a></li>';
+      echo '</ul></div>';
+
+      echo $after_widget;
+
+    }	
+	
+	//数据更新函数
+    function update( $new_instance, $old_instance ) {
+
+      $instance            = $old_instance;
+      $instance['title']   = $new_instance['title'];  
+      return $instance;
+
+    }
+	//后台表单函数
+    function form( $instance ) {
+
+      //
+      // 设置默认值
+      // -------------------------------------------------
+      $instance   = wp_parse_args( $instance, array(
+        'title'   => '切换皮肤',		
+      ));
+
+      //
+      // 标题
+      // -------------------------------------------------
+      $text_value = esc_attr( $instance['title'] );
+      $text_field = array(
+        'id'    => $this->get_field_name('title'),
+        'name'  => $this->get_field_name('title'),
+        'type'  => 'text',
+        'title' => '标题',
+      );
+
+      echo cs_add_element( $text_field, $text_value );
+
+    }
+  } 
+}
+
+if ( ! function_exists( 'cs_widget_init_skin' ) ) {
+  function cs_widget_init_skin() {
+    register_widget( 'CS_Widget_skin' );
+  }
+  add_action( 'widgets_init', 'cs_widget_init_skin', 2 );
+}
