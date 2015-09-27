@@ -6,3 +6,5 @@ Teahouse依然是免费维护更新，感谢依然使用Teahouse的用户们。
 作者：http://lazyhood.com
 
 注意：初次使用时，可导入主题目录下的demo.txt到主题选项的后台，方便熟悉后台设置。
+
+这是一个fork的项目

@@ -784,8 +784,12 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
 
       echo '<div class="textwidget">';
       echo '<div class="skin_s"><span><i class="fa-cog"></i></span><ul>';
-      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="http://www.mwiacx.ml/wp-content/themes/Teahouse/skin/switcher.php?style=skin01.css"></a></li>';
-      echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="http://www.mwiacx.ml/wp-content/themes/Teahouse/skin/switcher.php?style=skin02.css"></a></li>';
+      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="http://';
+      echo $instance['website'];
+      echo '/wp-content/themes/Teahouse/skin/switcher.php?style=skin01.css"></a></li>';
+      echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="http://';
+      echo $instance['website'];
+      echo '/wp-content/themes/Teahouse/skin/switcher.php?style=skin02.css"></a></li>';
       echo '</ul></div></div>';
 
       echo $after_widget;
@@ -796,7 +800,8 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
     function update( $new_instance, $old_instance ) {
 
       $instance            = $old_instance;
-      $instance['title']   = $new_instance['title'];  
+      $instance['title']   = $new_instance['title'];
+      $instance['website'] = $new_instance['website'];  
       return $instance;
 
     }
@@ -807,7 +812,8 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
       // 设置默认值
       // -------------------------------------------------
       $instance   = wp_parse_args( $instance, array(
-        'title'   => '切换皮肤',		
+        'title'   => '切换皮肤',
+        'website' => 'www.example.com'		
       ));
 
       //
@@ -820,7 +826,17 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
         'type'  => 'text',
         'title' => '标题',
       );
-
+      echo cs_add_element( $text_field, $text_value );
+      //
+      //网址
+      //---------------------------------------------------
+      $text_value = esc_attr( $instance['website'] );
+      $text_field = array(
+        'id'    => $this->get_field_name('website'),
+        'name'  => $this->get_field_name('website'),
+        'type'  => 'text',
+        'title' => '网址',
+      );
       echo cs_add_element( $text_field, $text_value );
 
     }
