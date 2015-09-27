@@ -97,12 +97,16 @@ function autoset_featured() {
                            }
                         }
       }  //end function
-add_action('the_post', 'autoset_featured');
-add_action('save_post', 'autoset_featured');
-add_action('draft_to_publish', 'autoset_featured');
-add_action('new_to_publish', 'autoset_featured');
-add_action('pending_to_publish', 'autoset_featured');
-add_action('future_to_publish', 'autoset_featured');
+	  
+$auto = cs_get_option( 'i_auto_featured' ); 
+if ($auto == true) {
+	add_action('the_post', 'autoset_featured');
+	add_action('save_post', 'autoset_featured');
+	add_action('draft_to_publish', 'autoset_featured');
+	add_action('new_to_publish', 'autoset_featured');
+	add_action('pending_to_publish', 'autoset_featured');
+	add_action('future_to_publish', 'autoset_featured');
+}	
 
 // 自动生成英文别名 - 百度版
 function bymt_slug_auto_translate( $title ) {
@@ -468,6 +472,39 @@ function posts_custom_column_views($column_name, $id){
         echo getPostViews(get_the_ID());
     }
 }
+
+/* 后台更新提醒 */	
+function createFolder($path){
+	if (!file_exists($path)){
+	   createFolder(dirname($path));
+	   mkdir($path, 0777);
+}}
+$data = array();
+$data['version'] = ''.cs_get_option('i_update_version').'';
+$data['notice'] = ''.cs_get_option('i_update_notice').'';
+foreach ( $data as $key => $value ) {  
+	$data[$key] = urlencode ( $value );  
+} 	
+$json_string = urldecode ( json_encode ( $data ) ); 
+$i_update = cs_get_option('i_update');
+if ($i_update == true) {
+	createFolder('updates');
+	file_put_contents('updates/update.json', $json_string);	
+}	
+
+function my_admin_notice() {
+	$url = wp_get_theme()->display('ThemeURI');
+	$name = wp_get_theme()->display('Name');
+	$nowversion = wp_get_theme()->display('Version');
+	$json_string = wp_remote_retrieve_body( wp_remote_get(''.$url.'updates/update.json',array('timeout' => 120)));
+	$obj=json_decode($json_string);
+	$newversion=$obj->version;
+	$notice=$obj->notice;
+	if (strcmp($newversion,$nowversion)>0) {
+		echo '<div class="update-nag">您的'.$name.'当前版本为:'.$nowversion.'，可更新到:'.$newversion.'。'.$notice.'</div>';
+	}		
+}
+add_action( 'admin_notices', 'my_admin_notice' );
 
 /* 边栏评论 */	
 	function h_comments($outer,$limit){

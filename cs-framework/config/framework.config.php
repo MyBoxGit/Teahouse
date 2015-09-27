@@ -450,7 +450,15 @@ $options[]      = array(
           'title'     => '自动生成英文别名--百度翻译',
         ),	
 		
-  		// 
+  		// 自动特色图
+		array(
+          'id'    	  => 'i_auto_featured',
+          'type'      => 'switcher',
+          'default'   => true,
+          'title'     => '自动特色图',
+        ),			
+		
+  		// 内页特色图
 		array(
           'id'    	  => 'i_post_featured',
           'type'      => 'switcher',
@@ -1166,6 +1174,36 @@ $options[]   = array(
           'type'      => 'switcher',
           'title'     => '手机端是否关闭',
         ),			
+		
+		array(
+		  'type'    => 'notice',
+		  'class'   => 'info',
+		  'content' => '更新推送',
+		),		
+		
+ 		// 更新推送
+		array(
+          'id'    	  => 'i_update',
+          'type'      => 'switcher',
+          'title'     => '更新推送',
+        ),		
+		
+		// 版本号		
+        array(
+          'id'         => 'i_update_version',
+          'type'       => 'text',
+          'title'      => '版本号',
+          'dependency' => array( 'i_update', '==', 'true' ),
+        ),
+		
+		// 通知		
+        array(
+          'id'         => 'i_update_notice',
+          'type'       => 'textarea',
+          'title'      => '通知',
+          'dependency' => array( 'i_update', '==', 'true' ),
+        ),			
+				
 		
   )
 );

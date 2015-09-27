@@ -1,10 +1,10 @@
 /*
 Theme Name: Teahouse
-Theme URI: http://Lazyhood.com/
+Theme URI: http://www.zhw-island.com/theme-teahouse/
 Description: Teahouse 是一款个性的博客主题.
 Author: 老赵
 Author URI: http://Lazyhood.com/
-Version: 2.2.8
+Version: 2.2.9
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -2333,8 +2333,8 @@ h3.related_title {
 }
 
 .rightbar .widget div , .rightbar .widget ul , .rightbar .widget form {
-    padding-left: 10px;
-    padding-right: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .widget div.clearfix {
@@ -5150,15 +5150,17 @@ input.disabled{
 
 
 /* media-queries */
-@font-face {
+
+@font-face
+{
     font-family:"MyKXFonts";
-    /* for ie */
+    /*for ie*/
     src:url('./fonts/MyKXFonts.eot');
     src:url('./fonts/MyKXFonts.eot#iefix') format('embedded-opentype'),
-    url('./fonts/MyKXFonts.woff') format('woff'),
-    /* for chrome firebox ... */
-    url('./fonts/MyKXFonts.ttf') format('truetype'),
-    url('./fonts/MyKXFonts.svg#webfont') format('svg');
+	url('./fonts/MyKXFonts.woff') format('woff'),
+    /*for chrome firebox....*/
+	url('./fonts/MyKXFonts.ttf') format('truetype'),
+	url('./fonts/MyKXFonts.svg#webfont') format('svg');
 }
 
 @media only screen and (max-width:768px) {
@@ -5166,6 +5168,11 @@ input.disabled{
 		display: none !important;
 	}
 
+	#copyright {
+		margin-left:0;
+		text-align:center;
+	}	
+	
 	#archive-nav {
 		margin-right: 10px !important;
 	}
@@ -5252,11 +5259,11 @@ input.disabled{
 
 	.container {
 		width: 100% !important;
-		padding: 0
+		padding: 0;
 	}
 
 	.logo-text a {
-		font-size: 24px
+		font-size: 24px;
 	}
 
 	#wrapper {
