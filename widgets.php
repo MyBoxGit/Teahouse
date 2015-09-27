@@ -782,10 +782,11 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
 		 echo $before_title . $instance['title'] . $after_title;
 	  }
 
-      echo '<div class="textwidget" id="comment-list"><ul>';
-      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Dark" href="http://www.zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin01.css"></a></li>';
-      echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="Light" href="http://www.zhw-island.com/wp-content/themes/Island/skin/switcher.php?style=skin02.css"></a></li>';
-      echo '</ul></div>';
+      echo '<div class="textwidget">';
+      echo '<div class="skin_s"><span><i class="fa-cog"></i></span><ul>';
+      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="http://www.mwiacx.ml/wp-content/themes/Teahouse/skin/switcher.php?style=skin01.css"></a></li>';
+      echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="http://www.mwiacx.ml/wp-content/themes/Teahouse/skin/switcher.php?style=skin02.css"></a></li>';
+      echo '</ul></div></div>';
 
       echo $after_widget;
 

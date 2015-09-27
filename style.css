@@ -2327,7 +2327,7 @@ h3.related_title {
 
 .rightbar .widget {
 	width:100%;
-	margin-bottom: 15px;
+	margin-bottom: 35px;
 	border-radius: 5px;
 	clear: both;
 }
@@ -3709,6 +3709,62 @@ ul.xoxo.blogroll {
 	padding: 15px;
 }
 
+.skin_s ul li{
+	border-bottom: 0px none ! important;
+    opacity: 0.5;
+    filter: Alpha(Opacity=50);
+    text-align: center;
+    width: 28px;
+    height: 28px;
+    margin-right: 5px;
+    display: block;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    -moz-box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    float: left;
+    background-size: 28px 28px;
+}
+
+.skin_s {
+	margin-left: -15px;
+	width: 100%;
+    height: 38px;
+    padding: 4px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.skin_s ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.skin_s span{
+	color: #9E9E9E;
+    padding: 1px 10px 0px 7px;
+    float: left;
+}
+
+.fa-cog {
+	display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translate(0, 0);
+}
+.skin1 {
+	background-color: #007aff;
+}
+.skin2 {
+	background-color: #222;
+}
 /* prettify */
 
 .prettyprint {
