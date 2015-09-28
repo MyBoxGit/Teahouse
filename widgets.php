@@ -784,10 +784,8 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
 
       echo '<div class="textwidget">';
       echo '<div class="skin_s"><span><i class="fa-cog"></i></span><ul>';
-      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="http://';
-      echo $instance['website'];
-      echo '/wp-content/themes/';
-      echo $instance['themename'];
+      echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="';
+      ?><?php echo get_template_directory_uri(); ?>;<?php 
       echo '/skin/switcher.php?style=skin01.css"></a></li>';
       echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="http://';
       echo $instance['website'];
