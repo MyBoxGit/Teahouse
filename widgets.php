@@ -786,10 +786,14 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
       echo '<div class="skin_s"><span><i class="fa-cog"></i></span><ul>';
       echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="http://';
       echo $instance['website'];
-      echo '/wp-content/themes/Teahouse/skin/switcher.php?style=skin01.css"></a></li>';
+      echo '/wp-content/themes/';
+      echo $instance['themename'];
+      echo '/skin/switcher.php?style=skin01.css"></a></li>';
       echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="http://';
       echo $instance['website'];
-      echo '/wp-content/themes/Teahouse/skin/switcher.php?style=skin02.css"></a></li>';
+      echo '/wp-content/themes/';
+      echo $instance['themename'];
+      echo '/skin/switcher.php?style=skin02.css"></a></li>';
       echo '</ul></div></div>';
 
       echo $after_widget;
@@ -801,7 +805,8 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
 
       $instance            = $old_instance;
       $instance['title']   = $new_instance['title'];
-      $instance['website'] = $new_instance['website'];  
+      $instance['website'] = $new_instance['website'];
+      $instance['themename'] = $new_instance['themename']; 
       return $instance;
 
     }
@@ -813,7 +818,8 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
       // -------------------------------------------------
       $instance   = wp_parse_args( $instance, array(
         'title'   => '切换皮肤',
-        'website' => 'www.example.com'		
+        'website' => 'www.example.com',
+        'themename' => 'Teahouse-Wordpress-Theme'		
       ));
 
       //
@@ -836,6 +842,17 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
         'name'  => $this->get_field_name('website'),
         'type'  => 'text',
         'title' => '网址',
+      );
+      echo cs_add_element( $text_field, $text_value );
+      //
+      //主题名称
+      //---------------------------------------------------
+      $text_value = esc_attr( $instance['themename'] );
+      $text_field = array(
+        'id'    => $this->get_field_name('themename'),
+        'name'  => $this->get_field_name('themename'),
+        'type'  => 'text',
+        'title' => '主题名称',
       );
       echo cs_add_element( $text_field, $text_value );
 
