@@ -786,10 +786,10 @@ if( ! class_exists( 'CS_Widget_skin' ) ) {
       echo '<div class="skin_s"><span><i class="fa-cog"></i></span><ul>';
       echo '<li class="skin1"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="清新" href="';
       ?><?php echo get_template_directory_uri(); ?><?php 
-      echo '/skin/switcher.php?style=skin01.css"></a></li>';
+      echo '/skin/switcher.php?style=skin01.css">1</a></li>';
       echo '<li class="skin2"><a class="simptip-position-bottom simptip-smooth simptip-movable" data-tooltip="复古" href="';
       ?><?php echo get_template_directory_uri(); ?><?php
-      echo '/skin/switcher.php?style=skin02.css"></a></li>';
+      echo '/skin/switcher.php?style=skin02.css">2</a></li>';
       echo '</ul></div></div>';
 
       echo $after_widget;
