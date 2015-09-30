@@ -2334,7 +2334,8 @@ h3.related_title {
 }
 
 .rightbar .widget div , .rightbar .widget ul , .rightbar .widget form {
-	padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .widget div.clearfix {
@@ -3758,6 +3759,7 @@ ul.xoxo.blogroll {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translate(0, 0);
+	padding-right: 3px;
 }
 .skin1 {
 	background-color: #007aff;
