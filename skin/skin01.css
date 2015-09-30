@@ -506,9 +506,6 @@ a.jm-post-like:hover,a.jm-post-like:active,a.jm-post-like:focus,a.liked:hover,a.
     color:#999;
 	background-color:#F7F6F1;	
     text-shadow: rgba(255, 255, 255, 0.85) 0px 1px 0px;
-}
-
-.me_content p {
 	margin: 0 0 6px;
 }
 
