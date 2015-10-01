@@ -1259,7 +1259,6 @@ ul#sticky {
 
 #bulletin_box {
 	background-color: rgba(247, 246, 241, 0.5);
-	background-color: #E3DEC0 \9;
 	border: 1px dashed #C1C0AB;
 	padding-left: 12px;
 	margin-bottom: 25px;
@@ -2457,6 +2456,10 @@ h3.related_title {
 	width: 100%;
 	font-size: 13px;
 	outline: none;
+}
+
+.rightbar .widget form.search-form {
+	padding: 0px;
 }
 
 .search-button {
