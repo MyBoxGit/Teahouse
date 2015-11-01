@@ -688,7 +688,8 @@ a:focus {
 
 .logo-subtitle {
 	width: 100%;
-	font-size: 14px;
+	font-size: 15px;
+	font-family: "MyKXFonts";
 	font-weight: 400;
 	line-height: 24px;
 	letter-spacing: 0;
