@@ -831,3 +831,15 @@ function island_cancel_comment_reply_button($html, $link, $text) {
 }
 add_action('cancel_comment_reply_link', 'island_cancel_comment_reply_button', 10, 3);
 
+// 返回网站中未审核留言数
+function get_not_audit_comments(){
+    if(is_home() && current_user_can('level_10')){    //只有在首页，并且管理员登录是才执行
+        $awaiting_mod = wp_count_comments();
+        $awaiting_mod = $awaiting_mod->moderated;
+        if($awaiting_mod){
+            //当存在未审核留言
+            echo "<div id=\"awaiting_comments\"><a href=".admin_url( 'edit-comments.php' ).'><i class=\'fa fa-comments\'></i>你有'.$awaiting_mod.'条新回复</a></div>';
+         }
+    }
+}
+add_filter('wp_footer','get_not_audit_comments');
