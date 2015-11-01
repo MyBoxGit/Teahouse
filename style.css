@@ -5213,8 +5213,8 @@ input.disabled{
 /* 管理员回复提醒 */
 #awaiting_comments{
 	position:fixed;
-	top: 65px;
-	right: 24px;
+	top: 35px;
+	right: 55px;
 	z-index:9999;
 	max-width: 180px;
 	_width:130px;
