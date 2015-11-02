@@ -79,7 +79,7 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 //http://codepen.io/souporserious/pen/XJQLEb
 	if($(".pullee").length>0){	
 		$(".form-submit #submit").attr("disabled", true);				
-		$(".form-submit #submit").addClass("disabled");				
+		$(".form-submit #submit").addClass("disabled");		
 
 		var inputRange = document.getElementsByClassName('pullee')[0],
 			maxValue = 250,
@@ -111,7 +111,7 @@ $('body').on('click', '#comment-nav-below a', function(e) {
 			$(".unlock .fa").removeClass("fa-lock");
 			$(".unlock .fa").addClass("fa-check");
 			inputRange.value = 250;
-			$(".pullee").attr("disabled", "disabled");		
+			//$(".pullee").attr("disabled", "disabled");		
 			$(".form-submit #submit").attr("disabled", false);
 			$(".form-submit #submit").removeClass("disabled");			
 			
